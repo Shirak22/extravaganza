@@ -38,7 +38,7 @@ body{
     font-family:sans-serif, Arial, Helvetica;
     background: var(--background-color);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 ul {
@@ -399,15 +399,17 @@ img {
 
 /* menu  */
 .menu_overlay {
+    display: none;
     position: absolute;
-    background: var(--background-color); 
+    background: hsl(206, 84%, 10%); 
+    box-shadow: -20px -0 10px rgba(0, 0, 0, 0.5);
     width: 450px;
     height: 100vh;
     right: 0;
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
-    transform: translate(100%,0);
+    transform: translate(120%,0);
     z-index: 1000;
 
 }
@@ -438,14 +440,15 @@ img {
 
 
 .open_menu{
+    display: flex;
     animation: slide 1s 200ms ease-out forwards ;
 }
 
 
 
 @keyframes slide {
-    from {right:0; transform: translate(100%,0);}
-    to {right:0; translate: -100%;}
+    from { opacity: 0; transform: translate(100%,0);}
+    to { opacity: 1; translate: -100%;}
 }
 
 
