@@ -672,7 +672,7 @@ img {
 .sale_modal-container{
     display: none; 
     background: rgba(0,0,0,.7);
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: 1200;
    
@@ -687,9 +687,24 @@ img {
     left: 50%;
     padding: 3rem;
     transform: translate(-50%,-50%);
-    animation: rollIn 1s ease-out forwards;
+    overflow: hidden;
+    animation: rollIn 400ms ease-out forwards;
+}
+.sale_modal .modal_title,
+.sale_modal  p
+ {
+    opacity: 0;
+    transform: translateX(350px);
 }
 
+
+.sale_modal .modal_title {
+    animation: slidInWithBlur 1s 500ms ease-out forwards;
+}
+
+.sale_modal p {
+    animation: slidInWithBlur 1s 800ms ease-out forwards;
+}
 .show{
     display: block;
 }
@@ -700,6 +715,10 @@ img {
     100% {opacity: 1}
 }
 
+@keyframes slidInWithBlur {
+    0% {opacity: 0; filter: blur(10px);  transform: translateX(350px);} 
+    100% {opacity: 1; filter: blur(0px);  transform: translateX(0);} 
+}
 
 @keyframes pulse {
     0% { filter: blur(0); opacity:1; scale: 1;}
