@@ -24,7 +24,5 @@ observer.observe(document.querySelector('.announce'));
 window.addEventListener('click', (e)=>{
     if(e.target === modal){
         modal.classList.remove('show');
-    }else {
-        modal.classList.add('show');
     }
 });

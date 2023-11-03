@@ -125,11 +125,9 @@ card.forEach(card => {
                 card.addEventListener('mouseover',() => {
                         card.classList.add('card_gallery-hover');
                 })
-
                 card.addEventListener('mouseout',() => {
                         card.classList.remove('card_gallery-hover');
                  })
-                
         });
 
 
@@ -150,4 +148,4 @@ card.forEach(card => {
                 duration:2000,
                 delay: anime.stagger(250),
                 easing:'easeOutSine',
-        },500)
+        },500) ; 
